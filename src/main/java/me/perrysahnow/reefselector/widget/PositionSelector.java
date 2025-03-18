@@ -25,7 +25,7 @@ public class PositionSelector extends SimpleAnnotatedWidget<String> {
     private void initialize() {
         reefPositions.imageProperty().bind(Bindings.createObjectBinding(() -> {
             String data = getData();
-            if (data != null && !data.equals("") && false) {
+            if (data != null && !data.equals("")) {
                 String pose = getData();
                 InputStream steam = getClass().getResourceAsStream("images/Reef_Reef Position " + pose + ".png");
                 if (steam != null) {
