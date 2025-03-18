@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<VBox xmlns="http://javafx.com/javafx"
+      xmlns:fx="http://javafx.com/fxml"
+      fx:controller="me.perrysahnow.reefselector.widget.PositionSelector"
+      fx:id="root"
+      spacing="0">
+    <ImageView pickOnBounds="true" fitHeight="500" preserveRatio="true" fx:id="reefPositions">
+        <image>
+            <Image url="@../images/Reef_Reef Positions Empty.png" />
+        </image>
+    </ImageView>
+</VBox>
