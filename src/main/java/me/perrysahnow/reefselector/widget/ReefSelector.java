@@ -26,7 +26,7 @@ public class ReefSelector extends SimpleAnnotatedWidget<String> {
     private void initialize() {
         coralReef.imageProperty().bind(Bindings.createObjectBinding(() -> {
             String data = getData();
-            if (data != null && !data.equals("") && false) {
+            if (data != null && !data.equals("")) {
                 String reefLevel = getData();
                 InputStream steam = getClass().getResourceAsStream("images/Reef_" + reefLevel + " Reef.png");
                 if (steam != null) {
