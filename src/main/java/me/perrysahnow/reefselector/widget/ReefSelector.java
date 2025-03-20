@@ -8,6 +8,7 @@ import javafx.fxml.FXML;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.input.KeyCode;
+import javafx.scene.layout.BorderPane;
 import javafx.scene.layout.Pane;
 
 import java.io.InputStream;
@@ -22,6 +23,9 @@ public class ReefSelector extends SimpleAnnotatedWidget<String> {
     private Pane root;
 
     @FXML
+    private BorderPane borderPane;
+
+    @FXML
     private ImageView coralReef;
 
     private HashMap<String, Image> reefImages = new HashMap<>();
@@ -32,6 +36,10 @@ public class ReefSelector extends SimpleAnnotatedWidget<String> {
         reefImages.put("L3", new Image(getClass().getResourceAsStream("images/Reef_L3 Reef.png")));
         reefImages.put("L4", new Image(getClass().getResourceAsStream("images/Reef_L4 Reef.png")));
         reefImages.put("Empty", new Image(getClass().getResourceAsStream("images/Reef_Empty Reef.png")));
+
+        coralReef.setPreserveRatio(true);
+        coralReef.fitWidthProperty().bind(borderPane.widthProperty());
+        coralReef.fitHeightProperty().bind(borderPane.heightProperty());
 
         coralReef.imageProperty().bind(Bindings.createObjectBinding(() -> {
             String data = getData();

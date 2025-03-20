@@ -3,14 +3,17 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.BorderPane?>
 <VBox xmlns="http://javafx.com/javafx"
       xmlns:fx="http://javafx.com/fxml"
       fx:controller="me.perrysahnow.reefselector.widget.PositionSelector"
       fx:id="root"
       spacing="0">
-    <ImageView pickOnBounds="true" fitHeight="500" preserveRatio="true" fx:id="reefPositions">
-        <image>
-            <Image url="@../images/Reef_Reef Positions Empty.png" />
-        </image>
-    </ImageView>
+    <BorderPane fx:id="borderPane">
+        <ImageView pickOnBounds="true" preserveRatio="true" fx:id="reefPositions">
+            <image>
+                <Image url="@../images/Reef_Reef Positions Empty.png"/>
+            </image>
+        </ImageView>
+    </BorderPane>
 </VBox>

@@ -8,6 +8,7 @@ import javafx.fxml.FXML;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.input.KeyCode;
+import javafx.scene.layout.BorderPane;
 import javafx.scene.layout.Pane;
 
 import java.io.InputStream;
@@ -19,6 +20,9 @@ public class PositionSelector extends SimpleAnnotatedWidget<String> {
 
     @FXML
     private Pane root;
+
+    @FXML
+    private BorderPane borderPane;
 
     @FXML
     private ImageView reefPositions;
@@ -43,6 +47,10 @@ public class PositionSelector extends SimpleAnnotatedWidget<String> {
             }
             return reefImages.get("Empty");
         }, dataProperty()));
+
+        reefPositions.setPreserveRatio(true);
+        reefPositions.fitWidthProperty().bind(borderPane.widthProperty());
+        reefPositions.fitHeightProperty().bind(borderPane.heightProperty());
 
         reefPositions.setOnMouseClicked(event -> {
             String data = getData();
